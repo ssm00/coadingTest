@@ -42,6 +42,10 @@ public class Ex05_1 {
                 if (nextX < 0 || nextY < 0 || nextX > 100 || nextY > 100) {
                     continue;
                 }
+                //visited 조건은 여기에 추가
+                if (visited[nextY][nextX] == true || map[nextY][nextX] == '1') {
+                    continue;
+                }
                 visited[nextY][nextX] = true;
                 q.add(new Integer[]{nextX, nextY, count + 1});
             }
