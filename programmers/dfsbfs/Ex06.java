@@ -72,8 +72,6 @@ public class Ex06 {
             System.out.println(solution[i]);
         }
     }
-
-
 }
 
 

@@ -5,7 +5,6 @@ public class Ex02 {
     public int answer;
 
     public int solution(int n, int[][] computers) {
-
         boolean[] check = new boolean[computers.length];
         for (int i = 0; i < computers.length; i++) {
             if (check[i] == false) {
@@ -15,7 +14,6 @@ public class Ex02 {
         }
         return answer;
     }
-
 
     //뿌리 하나 내리기
     //갔는지 안갔는지 확인하기 위해 check가 필요함

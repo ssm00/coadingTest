@@ -5,9 +5,7 @@ public class Ex01 {
 
     public void dfs(int[] numbers, int depth, int target, int sum) {
         if (depth == numbers.length) {
-            if (target == sum) {
-                answer++;
-            }
+            if (target == sum) answer++;
         } else {
             dfs(numbers, depth + 1, target, sum + numbers[depth]);
             dfs(numbers, depth + 1, target, sum - numbers[depth]);
