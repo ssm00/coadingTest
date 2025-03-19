@@ -19,21 +19,24 @@ public class No2011Gold5 {
 
         int dp[] = new int[str.length() + 1];
         dp[0] = 1;
-        //2511
-        dp[1] = 1;
-        for (int i = 2; i < str.length(); i++) {
-            int one = str.charAt(i-1) - '0';
-            int two = str.charAt(i) - '0';
-            int num = one * 10 + two;
-            //2가지
-            if (num >= 10 && num <= 26) {
-                dp[i] += dp[i-1] + dp[i - 2];
-            } else {
-                dp[i] += dp[i-1];
+        //dp 12511
+        //str 2511
+        for (int i = 1; i < dp.length; i++) {
+            int one = str.charAt(i - 1) - '0';
+            if(one >= 1 && one <= 9){
+                dp[i] += dp[i - 1];
+                dp[i] %= MOD;
             }
-
+            int two = str.charAt(i - 2) - '0';
+            if (two == 0) {
+                continue;
+            }
+            int full = two * 10 + one;
+            if (full >= 10 && full <= 26) {
+                dp[i] += dp[i - 2];
+                dp[i] %= MOD;
+            }
         }
         System.out.println(dp[str.length()]);
-
     }
 }
